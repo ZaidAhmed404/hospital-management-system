@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 5px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 5px 0;
+}
+.grid-container1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+}
+
+.grid-container1 > div {
+  text-align: center;
+  padding: 5px 0;
+}
+p {
+  border: 1px solid black;
+  margin: auto;  
+  padding: 10px;
+  text-align: center;
+}
+
+.container1 {
+ display: grid;
+ align-items: center; 
+ grid-template-columns: 1fr 2fr 1fr;
+ column-gap: 1px;
+}
+
+.img {
+  width: 30px;
+  height:30px;
+}
+
+.text1 {
+    font-size: 20px;
+   font-family: url(sansation_light.woff);
+   src: url(sansation_light.woff);
+
+    color: #EF3B2D;
+}
+</style>
+</head>
+<body>
+    <div class="container1">
+        <div class="image">
+            <img src="{{URL('assets/1.png')}}">
+        </div>
+        <div class="text1">
+            <h1>Ghazaband Scouts</h1>
+        </div>
+        <div class="image">
+            <img src="{{URL('assets/2.png')}}">
+        </div>
+        </div>
+<div class="grid-container1">
+
+  <div>Name</div>
+  <div>Regt.Number</div>
+  <div>
+   <p>{{$Patient->name}}</p> </div>
+  <div>
+    <p>{{$Patient->regtNumber}}</p>
+  </div>
+</div>
+<br>
+<div class="grid-container1">
+
+<div>Unit</div>
+<div>Rank</div>
+<div>
+ <p>{{$Patient->unit}}</p> </div>
+<div>
+  <p>{{$Patient->rank}}</p>
+</div>
+</div>
+</div>
+<br>
+<center>
+    Diagnosis
+</center>
+<br>
+<p>{{$Patient->diagnosis}}</p>
+@foreach ($Patient->prescription as $prescription)
+<div class="grid-container1">
+    <div>Medicine</div>
+    <div>Quantity</div>
+    <div>
+     <p>{{$prescription->medicine->name}}</p> </div>
+    <div>
+      <p>{{$prescription->Quantity}}</p>
+    </div>
+    </div>
+    </div>
+    <br>
+@endforeach
+@foreach ($Patient->remarks as $remark)
+<div class="grid-container">
+
+    <div>Referred To</div>
+    <div>Attend BEE</div>
+    <div>Attend CEE</div>
+    <div>
+     <p>{{$remark->referredTo}}</p> </div>
+    <div>
+      <p>{{$remark->ateendBEE}}</p>
+    </div>
+    <div>
+        <p>{{$remark->ateendCEE}}</p>
+      </div>
+    </div>
+    </div>
+    <br>
+    @endforeach
+        @foreach ($Patient->notes as $note)
+
+<center>
+    Physicion Note
+</center>
+<br>
+<p>{{$note->note}}</p>
+        @endforeach
+</body>
+</html>
