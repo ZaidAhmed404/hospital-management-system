@@ -1,7 +1,6 @@
 # Hospital Management System
-A Hospital Management System (HMS) in Laravel is a web-based application designed to streamline and automate various processes within a hospital or healthcare facility. The system typically includes modules for managing patients, doctors, appointments, medical records, billing, and other related aspects. Below is a detailed description and requirements for a Hospital Management System in Laravel:
+A Hospital Management System (HMS) in Laravel is a web-based application designed to streamline and automate various processes within a hospital or healthcare facility. The system typically includes modules for managing patients, doctors, appointments, medical records, and other related aspects.
 
-## System Modules
 ### Patient Management
 1.  Add, update, and delete patient records.
 2.  Capture patient demographics, contact information, and medical history.
